@@ -118,3 +118,14 @@ packages/
 # Business Intelligence projects
 *.rdl.data
 *.bim.data
+
+# --- Environment files ---
+# ignore common env files everywhere
+.env
+.env.*
+**/.env
+**/.env.*
+
+# but keep templates/safe examples tracked
+!.env.example
+!.env.sample
