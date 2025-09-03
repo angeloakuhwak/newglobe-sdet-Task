@@ -121,11 +121,11 @@ packages/
 
 # --- Environment files ---
 # ignore common env files everywhere
-.env
-.env.*
-**/.env
-**/.env.*
+# .env
+# .env.*
+# **/.env
+# **/.env.*
 
-# but keep templates/safe examples tracked
-!.env.example
-!.env.sample
+# # but keep templates/safe examples tracked
+# !.env.example
+# !.env.sample
