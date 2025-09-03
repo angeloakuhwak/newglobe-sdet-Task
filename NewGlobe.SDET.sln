@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8FA55F89-726C-4CB3-AF01-3E5FA8A0900C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureToggle.ApiTests", "tests\FeatureToggle.ApiTests\FeatureToggle.ApiTests.csproj", "{FF2A95C2-FFF9-4CF7-B1BB-E2CD23EDA7A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UiTests", "ui-tests-csharp\UiTests.csproj", "{F932AEEE-672F-4AC2-8FD4-B232795F7367}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF2A95C2-FFF9-4CF7-B1BB-E2CD23EDA7A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2A95C2-FFF9-4CF7-B1BB-E2CD23EDA7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF2A95C2-FFF9-4CF7-B1BB-E2CD23EDA7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2A95C2-FFF9-4CF7-B1BB-E2CD23EDA7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F932AEEE-672F-4AC2-8FD4-B232795F7367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F932AEEE-672F-4AC2-8FD4-B232795F7367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F932AEEE-672F-4AC2-8FD4-B232795F7367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F932AEEE-672F-4AC2-8FD4-B232795F7367}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF2A95C2-FFF9-4CF7-B1BB-E2CD23EDA7A4} = {8FA55F89-726C-4CB3-AF01-3E5FA8A0900C}
+	EndGlobalSection
+EndGlobal

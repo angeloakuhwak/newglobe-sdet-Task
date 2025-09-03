@@ -1,0 +1,7 @@
+# Minimal ZAP baseline config
+env:
+  target: ${UI_BASE_URL}
+  rules_file: .zap/rules.tsv
+  cmd_options: "-a -m 5" # active scan light, max 5 mins
+
+

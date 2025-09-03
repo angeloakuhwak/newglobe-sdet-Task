@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  k6:
+    image: grafana/k6:latest
+    env_file:
+      - .env
+    volumes:
+      - ./k6:/k6
+    command: ["run", "/k6/smoke.js"]
+  zap:
+    image: owasp/zap2docker-stable
+    env_file:
+      - .env
+    volumes:
+      - ./.zap:/zap/wrk
+    command: >
+      zap-baseline.py -t ${UI_BASE_URL}
+      -c /zap/wrk/baseline.yaml
+      -r zap-baseline-report.html
+    ports:
+      - "8090:8090"
+    working_dir: /zap
