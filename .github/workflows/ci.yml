@@ -65,9 +65,11 @@ jobs:
           dotnet build   ./ui-tests-csharp/UiTests.csproj -c Release
 
       # Install Playwright browsers + Linux deps into the same output folder we will test from
-      - name: Install Playwright browsers
-        working-directory: ui-tests-csharp/bin/Release/net8.0
-        run: pwsh ./ui-tests-csharp/bin/Release/net8.0/playwright.ps1 install --with-deps
+      - name: Install Playwright browsers (Linux deps)
+        run: |
+          dotnet tool install --global Microsoft.Playwright.CLI
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+          playwright install --with-deps
 
       # Run under a virtual display on Linux (works whether your code is headless or headful)
       - name: Run UI smoke (C#) under Xvfb
@@ -77,11 +79,9 @@ jobs:
           UI_USERNAME: ${{ secrets.UI_USERNAME }}
           UI_PASSWORD: ${{ secrets.UI_PASSWORD }}
         run: |
-          xvfb-run -a dotnet test ./ui-tests-csharp/UiTests.csproj -c Release \
-            --logger "trx;LogFileName=ui-csharp.trx"
+          xvfb-run -a dotnet test ./ui-tests-csharp/UiTests.csproj -c Release --logger "trx;LogFileName=ui-csharp.trx"
 
-      - name: Upload UI artifacts
-        if: always()
+      - name: Upload UI (.NET) artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ui-csharp-artifacts
