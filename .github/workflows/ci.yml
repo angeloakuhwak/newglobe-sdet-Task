@@ -67,9 +67,7 @@ jobs:
       # Install Playwright browsers + Linux deps into the same output folder we will test from
       - name: Install Playwright browsers
         working-directory: ui-tests-csharp/bin/Release/net8.0
-        run: |
-          chmod +x ./playwright.sh
-          ./playwright.sh install --with-deps
+        run: pwsh ./ui-tests-csharp/bin/Release/net8.0/playwright.ps1 install --with-deps
 
       # Run under a virtual display on Linux (works whether your code is headless or headful)
       - name: Run UI smoke (C#) under Xvfb
